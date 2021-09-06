@@ -1,10 +1,11 @@
 # Script da alternativa 'b', da questão 3, da lista 1 da matéria de metódos 
 # numéricos para engenharia da universidade de brasilia
-#{
+
 clear all;
-F = inline('(sqrt(9+x)-3)/x');
-a=0.005;
-b=0.010;
+format long
+F = inline('(x^2) - (e^(-x))');
+a=0;
+b=1;
 imax=20;
 tol=0.000001;
 
@@ -14,7 +15,7 @@ Fb=F(b);
 if Fa*Fb>0
   disp('Erro : A função tem o mesmo sinal nos pontos a e b')
 else
-  disp('iteration  a    b   (xNS)Solução     f(xNS)  Tolerância')
+  disp('iteration  a        b       (xNS)Solução     f(xNS)  Tolerância')
   
   for i=1:imax
     xNS=(a+b)/2;
@@ -39,8 +40,8 @@ else
     end
   end
 end 
-#}
 
+#{
 format long
 fprintf('\n');
 valorVerdadeiro = ((sqrt(9+0.005)-3)/0.005)*((sqrt(9+0.005)+3)/(sqrt(9+0.005)+3))
@@ -53,7 +54,7 @@ fprintf('\n');
 erroRelativo= erroAbsoluto/valorVerdadeiro
 fprintf('\n');
 
-
+#}
 
 
 
